@@ -16,7 +16,7 @@
   "profile": {
     "name": "typicode"
   },
-  "employees": [
+ "employees": [
     {
       "id": 1,
       "firstName": "Ann",
@@ -31,17 +31,17 @@
       "image": "profile0.jpg",
       "experience": "3",
       "leave": 4,
-      "previousmonthLeave": 2,
-      "currentmonthleave": 0,
-      "previousmonth": 2,
-      "status": "Active",
+      "previousweekLeave": 2,
+      "currentweekleave": 0,
+      "previousweek": "13",
+      "status": "Inactive",
       "leavelist": [
         {
-          "leavetype": "",
-          "days": 0,
-          "startDate": "",
-          "endDate": "",
-          "reason": ""
+          "leavetype": "sick",
+          "days": 2,
+          "startDate": "2023-03-27",
+          "endDate": "2023-03-29",
+          "reason": "dddd"
         }
       ]
     },
@@ -59,26 +59,11 @@
       "image": "profile1.jpeg",
       "experience": 2,
       "leave": 13,
-      "previousmonthLeave": 2,
-      "currentmonthleave": 0,
-      "previousmonth": 2,
+      "previousweekLeave": 2,
+      "currentweekleave": 0,
+      "previousweek": "13",
       "status": "Inactive",
-      "leavelist": [
-        {
-          "leavetype": "",
-          "days": 0,
-          "startDate": "",
-          "endDate": "",
-          "reason": ""
-        },
-        {
-          "leavetype": "sick",
-          "days": 2,
-          "startDate": "2023-03-21",
-          "endDate": "2023-03-22",
-          "reason": "djdjfv"
-        }
-      ]
+      "leavelist": []
     },
     {
       "id": 3,
@@ -94,19 +79,11 @@
       "image": "profile2.jpg",
       "experience": 6,
       "leave": 19,
-      "previousmonthLeave": 4,
-      "currentmonthleave": 2,
-      "previousmonth": 2,
+      "previousweekLeave": 2,
+      "currentweekleave": 0,
+      "previousweek": "13",
       "status": "Inactive",
-      "leavelist": [
-        {
-          "leavetype": "",
-          "days": 0,
-          "startDate": "",
-          "endDate": "",
-          "reason": ""
-        }
-      ]
+      "leavelist": []
     },
     {
       "firstName": "Jessica",
@@ -121,20 +98,12 @@
       "image": "profile3.jpg",
       "experience": 4,
       "leave": 16,
-      "previousmonthLeave": 5,
-      "currentmonthleave": 0,
-      "previousmonth": 2,
+      "previousweekLeave": 1,
+      "currentweekleave": 0,
+      "previousweek": "13",
       "id": 4,
-      "status": "Active",
-      "leavelist": [
-        {
-          "leavetype": "",
-          "days": 0,
-          "startDate": "",
-          "endDate": "",
-          "reason": ""
-        }
-      ]
+      "status": "Inactive",
+      "leavelist": []
     },
     {
       "firstName": "Albert",
@@ -149,20 +118,12 @@
       "image": "profile4.jpg",
       "experience": 2,
       "leave": 9,
-      "previousmonthLeave": 3,
-      "currentmonthleave": 0,
-      "previousmonth": 2,
+      "previousweekLeave": 0,
+      "currentweekleave": 0,
+      "previousweek": "13",
       "id": 5,
       "status": "Inactive",
-      "leavelist": [
-        {
-          "leavetype": "",
-          "days": 0,
-          "startDate": "",
-          "endDate": "",
-          "reason": ""
-        }
-      ]
+      "leavelist": []
     },
     {
       "id": 6,
@@ -178,19 +139,11 @@
       "image": "profile5.jpg",
       "experience": 8,
       "leave": 18,
-      "previousmonthLeave": 2,
-      "currentmonthleave": 0,
-      "previousmonth": 2,
+      "previousweekLeave": 1,
+      "currentweekleave": 0,
+      "previousweek": "13",
       "status": "Inactive",
-      "leavelist": [
-        {
-          "leavetype": "",
-          "days": 0,
-          "startDate": "",
-          "endDate": "",
-          "reason": ""
-        }
-      ]
+      "leavelist": []
     },
     {
       "id": 7,
@@ -206,19 +159,11 @@
       "image": "profile14.jpg",
       "experience": 10,
       "leave": 16,
-      "previousmonthLeave": 1,
-      "currentmonthleave": 0,
-      "previousmonth": 2,
-      "status": "Active",
-      "leavelist": [
-        {
-          "leavetype": "",
-          "days": 0,
-          "startDate": "",
-          "endDate": "",
-          "reason": ""
-        }
-      ]
+      "previousweekLeave": 1,
+      "currentweekleave": 0,
+      "previousweek": "13",
+      "status": "Inactive",
+      "leavelist": []
     },
     {
       "id": 8,
@@ -234,19 +179,11 @@
       "image": "profile11.jpg",
       "experience": 5,
       "leave": 11,
-      "previousmonthLeave": 5,
-      "currentmonthleave": 0,
-      "previousmonth": 2,
-      "status": "Active",
-      "leavelist": [
-        {
-          "leavetype": "",
-          "days": 0,
-          "startDate": "",
-          "endDate": "",
-          "reason": ""
-        }
-      ]
+      "previousweekLeave": 3,
+      "currentweekleave": 0,
+      "previousweek": "13",
+      "status": "Inactive",
+      "leavelist": []
     },
     {
       "id": 9,
@@ -262,19 +199,11 @@
       "image": "profile6.jpg",
       "experience": 8,
       "leave": 15,
-      "previousmonthLeave": 3,
-      "currentmonthleave": 0,
-      "previousmonth": 2,
-      "status": "Active",
-      "leavelist": [
-        {
-          "leavetype": "",
-          "days": 0,
-          "startDate": "",
-          "endDate": "",
-          "reason": ""
-        }
-      ]
+      "previousweekLeave": 0,
+      "currentweekleave": 0,
+      "previousweek": "13",
+      "status": "Inactive",
+      "leavelist": []
     },
     {
       "id": 10,
@@ -290,19 +219,11 @@
       "image": "profile7.jpg",
       "experience": 8,
       "leave": 12,
-      "previousmonthLeave": 6,
-      "currentmonthleave": 0,
-      "previousmonth": 2,
+      "previousweekLeave": 6,
+      "currentweekleave": 0,
+      "previousweek": "13",
       "status": "Inactive",
-      "leavelist": [
-        {
-          "leavetype": "",
-          "days": 0,
-          "startDate": "",
-          "endDate": "",
-          "reason": ""
-        }
-      ]
+      "leavelist": []
     },
     {
       "id": 11,
@@ -318,19 +239,11 @@
       "image": "profile8.jpg",
       "experience": 3,
       "leave": 7,
-      "previousmonthLeave": 2,
-      "currentmonthleave": 0,
-      "previousmonth": 2,
-      "status": "Active",
-      "leavelist": [
-        {
-          "leavetype": "",
-          "days": 0,
-          "startDate": "",
-          "endDate": "",
-          "reason": ""
-        }
-      ]
+      "previousweekLeave": 2,
+      "currentweekleave": 0,
+      "previousweek": "13",
+      "status": "Inactive",
+      "leavelist": []
     },
     {
       "id": 12,
@@ -346,19 +259,11 @@
       "image": "profile9.jpg",
       "experience": 2,
       "leave": 8,
-      "previousmonthLeave": 3,
-      "currentmonthleave": 0,
-      "previousmonth": 2,
-      "status": "Active",
-      "leavelist": [
-        {
-          "leavetype": "",
-          "days": 0,
-          "startDate": "",
-          "endDate": "",
-          "reason": ""
-        }
-      ]
+      "previousweekLeave": 1,
+      "currentweekleave": 0,
+      "previousweek": "13",
+      "status": "Inactive",
+      "leavelist": []
     },
     {
       "id": 13,
@@ -374,19 +279,11 @@
       "image": "profile16.jpg",
       "experience": 7,
       "leave": 9,
-      "previousmonthLeave": 2,
-      "currentmonthleave": 0,
-      "previousmonth": 2,
+      "previousweekLeave": 2,
+      "currentweekleave": 0,
+      "previousweek": "13",
       "status": "Inactive",
-      "leavelist": [
-        {
-          "leavetype": "",
-          "days": 0,
-          "startDate": "",
-          "endDate": "",
-          "reason": ""
-        }
-      ]
+      "leavelist": []
     },
     {
       "id": 14,
@@ -402,19 +299,11 @@
       "image": "profile12.jpg",
       "experience": 6,
       "leave": 6,
-      "previousmonthLeave": 2,
-      "currentmonthleave": 0,
-      "previousmonth": 2,
+      "previousweekLeave": 3,
+      "currentweekleave": 0,
+      "previousweek": "13",
       "status": "Inactive",
-      "leavelist": [
-        {
-          "leavetype": "",
-          "days": 0,
-          "startDate": "",
-          "endDate": "",
-          "reason": ""
-        }
-      ]
+      "leavelist": []
     },
     {
       "id": 15,
@@ -430,19 +319,11 @@
       "image": "profile13.jpg",
       "experience": "10",
       "leave": 2,
-      "previousmonthLeave": 3,
-      "currentmonthleave": 0,
-      "previousmonth": 2,
-      "status": "Active",
-      "leavelist": [
-        {
-          "leavetype": "",
-          "days": 0,
-          "startDate": "",
-          "endDate": "",
-          "reason": ""
-        }
-      ]
+      "previousweekLeave": 3,
+      "currentweekleave": 0,
+      "previousweek": "13",
+      "status": "Inactive",
+      "leavelist": []
     }
   ]
 }
