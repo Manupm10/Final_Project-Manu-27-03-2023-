@@ -143,16 +143,16 @@ export class ChartComponent implements OnInit {
 
   today= new Date();
   leavecount(){
-    let month = this.today.getMonth(); 
-    console.log('month',month);
+let current_week = this.datePipe.transform(this.today,'w')
+    console.log('month', current_week);
     for(let i=0;i<this.empdata.length;i++){
-      console.log('previousmonth',this.empdata[i].previousmonth);
-      if(month!=this.empdata[i].previousmonth){
-        console.log('previousmonthleave',this.empdata[i].previousmonthLeave);
-        console.log('currentmonthleave',this.empdata[i].currentmonthleave);
-        this.empdata[i].previousmonthLeave+=this.empdata[i].currentmonthleave;
-        this.empdata[i].currentmonthleave=0;
-        this.empdata[i].previousmonth=month;
+      console.log('previousweek',this.empdata[i].previousweek);
+      if( current_week!=this.empdata[i].previousweek){
+        console.log('previousmonthleave',this.empdata[i].previousweekLeave);
+        console.log('currentmonthleave',this.empdata[i].currentweekleave);
+        this.empdata[i].previousweekLeave+=this.empdata[i].currentweekleave;
+        this.empdata[i].currentweekleave=0;
+        this.empdata[i].previousweek= current_week;
         console.log('i',i);
         this.api.patchDetails(this.empdata[i],this.empdata[i].id).subscribe(res=>{
           
