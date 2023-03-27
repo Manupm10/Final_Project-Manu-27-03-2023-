@@ -52,7 +52,7 @@ export class ChartComponent implements OnInit {
           // console.log(this.chartdata[i]);
           this.labeldata.push(this.chartdata[i].firstName);
           this.realdata.push(this.chartdata[i].leave);
-          this.dorealdata2.push(this.chartdata[i].previousmonthLeave);
+          this.dorealdata2.push(this.chartdata[i].previousweekLeave);
         }
         this.BarChart(this.labeldata,this.realdata,this.dorealdata2,'bar','barchart');
        
@@ -76,7 +76,7 @@ export class ChartComponent implements OnInit {
           hoverOffset: 4
         },
         {
-          label: '# of Leave Taken Past Month',
+          label: '# of Leave Taken Past week',
           data: dorealdata2,
           backgroundColor:[
             'rgba(6, 67, 209,0.8)',
