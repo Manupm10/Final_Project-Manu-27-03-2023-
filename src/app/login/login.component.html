@@ -1,0 +1,65 @@
+ <div class="login-page  mh-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">  
+                <div class="bg-white shadow rounded">
+                    <div class="row">
+                        <div class="col-md-7 py-5 px-5">
+                            <h3 class="mb-3 ms-5">Login For Employee And HR.</h3>
+                            <div class="form-left py-5 px-5">
+                                <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="row g-4">
+                                        <div class="col-12">
+                                            <label>Username<span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <div class="input-group-text"><i class="fa fa-user"></i></div>
+                                                <input type="text" class="form-control" required formControlName="firstName" placeholder="Enter Username">
+                                            </div>
+                                                <div class="text-danger" *ngIf="myForm.get('firstName')?.invalid && myForm.get('firstName')?.touched">
+                                                    <span>Please Enter your name.</span>
+                                                </div>   
+                                        </div>
+                                        <div class="col-12">
+                                            <label>Password<span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <div class="input-group-text"><i class="fa fa-lock"></i></div>
+                                                <input [type]="changetype ? 'password' : 'text'" required class="form-control" formControlName="password" placeholder="Enter Password">
+                                                <span class="input-group-text" style=" position: relative;">
+                                                    <i alt="show" [ngClass]="showPassword?'far fa-eye eye-show':'far fa-eye-slash eye-hide'"
+                                                    (click)="visiblePass()"
+                                                    [class.hide]="showPassword"></i>
+                                                </span> <br>
+                                            </div>
+                                                <div class="text-danger" *ngIf="myForm.get('password')?.invalid && myForm.get('password')?.touched">
+                                                    <span>Please Enter your password.</span>
+                                                </div>
+                                                <div class="text-danger" *ngIf="myForm.get('password')!.hasError('pattern')">
+                                                    Please provide a valid Password.Minimum 8 characters required.<br><br>
+                                                  </div>
+                                            </div>    
+                                        <div class="col-12">
+                                            <input type="submit" class="btn btn-secondary"  value="Login" [disabled]="myForm.invalid" 
+                                            style=" background: linear-gradient(rgb(51, 51, 53) 5%,rgb(96, 98, 102)) 92%;">
+                                        </div>
+                                        <!-- <div class="col-sm-3 col-lg-12 mt-5 "> <ul class="social-network social-circle"> 
+                                            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                            </li> 
+                                            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li> 
+                                            <li><a href="#" class="icoGoogle" title="Google +"><i class="fab fa-google-plus"></i></a></li> </ul> 
+                                          </div>  -->
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-5 ps-0 d-none d-md-block">
+                            <div class="form-right h-100 bg-secondary text-white text-center pt-5" 
+                            style=" background: linear-gradient(rgb(57, 59, 63) 5%,rgb(76, 79, 88)) 92%;">
+                                <!-- <i class="fa fa-users"></i>
+                                <h2 class="fs-1">Welcome To Employee Management System!!!</h2> -->
+                                <img src="..\..\assets\Images\logo3.png" alt="Employee Management System" class="img-thumbnail border border-0 bg-transparent mt-5"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

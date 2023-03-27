@@ -1,0 +1,214 @@
+<body class="hold-transition sidebar-mini sidebar-collapse layout-fixed">
+    <div class="wrapper">
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light" id="navbarid">
+            <ul class="navbar-nav">
+                <li class="nav-item bnx-menu-toggle-bar">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto top-right-menu">
+                <div class="dropdown ms-auto">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="../../assets/Images/{{empData.image}}" width="40" height="40" class="rounded-circle">
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" (click)="empNav()" style="cursor: pointer;">My Profile</a>
+                        <a class="dropdown-item" href="/login" (click)="logout()">Logout  <i class='fas fa-sign-out-alt'
+                            style="color: #ff0000;"></i></a>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <a  class="brand-link">
+                <span class="brand-image-outer">
+                    <img src="..\..\assets\Images\logo3.png" alt="Employee Management System"
+                        class="img-thumbnail border border-0 bg-transparent" />
+                </span>
+            </a>
+            <div class="sidebar">
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+
+                        <li class="nav-item">
+                            <a class="nav-link" (click)="empNav()">
+                                <i class='fas fa-user-alt me-3'></i>
+                                <p>
+                                    Employee Profile
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </aside>
+        <div class="content-wrapper">
+            <div class="content"></div>
+            <div class="container-fluid mt-3">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header border-0">
+                                <h1>Leave Application Form<br><small></small></h1>
+                            </div>
+                            <div class="card-body">
+                                <div class="position-relative mb-4">
+                                    <div class="container">
+                                        <button type="button" class="btn btn-outline-info m-3" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">Apply</button>
+                                        <mat-card class="demo-inline-calendar-card">
+                                            <mat-calendar></mat-calendar>
+                                        </mat-card>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Leave Details</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body m-5">
+                                                <form [formGroup]="leaveForm" (ngSubmit)="Onleave()">
+                                                    <div class="form-body m-1">
+                                                        <div class="form-group mb-5">
+                                                            <mat-radio-group aria-label="Select an option">
+                                                                <mat-radio-button value="full">Full
+                                                                    Day</mat-radio-button>
+                                                                <mat-radio-button value="half">Half
+                                                                    Day</mat-radio-button>
+                                                            </mat-radio-group>
+                                                            <!-- <label class="radio-inline mt-5">
+                                                            <input type="radio" name="full" checked>Full Day
+                                                        </label>
+                                                        <label class="radio-inline ms-5">
+                                                            <input type="radio" name="half">Half Day
+                                                        </label> -->
+                                                        </div>
+                                                        <legend>Type of Leave</legend>
+                                                        <div class="form-group mb-5">
+                                                            <select class="form-control form-select"
+                                                                formControlName="leavetype" placeholder="Select Leave">
+                                                                <option value="select" [selected]="sick">Select Leave
+                                                                    Type
+                                                                </option>
+                                                                <option value="sick">Sick Leave</option>
+                                                                <option value="other">Others</option>
+                                                            </select>
+                                                            <div class="text-danger"
+                                                            *ngIf="leaveForm.get('leavetype')?.invalid && leaveForm.get('leavetype')?.touched">
+                                                            <span>This field is Required.</span>
+                                                        </div>
+                                                        </div>
+                                                        <legend>How Many Days?</legend>
+                                                        <div class="form-group mb-5">
+                                                            <input type="number" formControlName="days"
+                                                                placeholder="Number of Days" class="form-control"
+                                                                required #days>
+
+                                                            <div class="text-danger"
+                                                                *ngIf="leaveForm.get('days')?.invalid && leaveForm.get('days')?.touched">
+                                                                <span>This field is Required.</span>
+                                                            </div>
+                                                        </div>
+                                                        <legend>Select Date</legend>
+                                                        <div class="form-group mb-5">
+                                                            <input type="date" formControlName="startDate"
+                                                                placeholder="dd/mm/yyyy" class="form-control" required>
+                                                        </div>
+                                                        <legend>End Date</legend>
+                                                        <div class="form-group mb-5">
+                                                            <input type="date" formControlName="endDate"
+                                                                placeholder="dd/mm/yyyy" class="form-control" required>
+                                                        </div>
+                                                        <legend>Reason For Leave.</legend>
+                                                        <div class="form-group mb-5">
+                                                            <textarea formControlName="reason" class="form-control"
+                                                                required></textarea>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" id="cancel" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary"
+                                                                [disabled]="leaveForm.invalid">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row justify-content-end">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card ">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between">
+                                    <h1>Leave Status</h1>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="position-relative mb-4">
+                                    <canvas id="dochart" height="200"></canvas>
+                                </div>
+                                <div class="d-flex flex-row justify-content-end">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="card ">
+                                <div class="card-header">
+                                    <div class="d-flex justify-content-between">
+                                        <h1>Leave History</h1>
+                                    </div>
+                                </div>
+                                <div class="card-body table-responsive p-0">
+                                    <div class="position-relative mb-4">
+                                        <table class="table align-middle mb-0 bg-white">
+                                            <thead class="bg-light text-center">
+                                                <tr>
+                                                    <th>Number</th>
+                                                    <th>Leave Type</th>
+                                                    <th>No. of Days</th>
+                                                    <th>Start Date</th>
+                                                    <th>End Date</th>
+                                                    <th>Reason</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-center">
+                                                <tr *ngFor="let leave of leavelist; let i =index">
+                                                    <td>{{i+1}}</td>
+                                                    <td>{{leave.leavetype}}</td>
+                                                    <td>{{leave.days}}</td>
+                                                    <td>{{leave.startDate}}</td>
+                                                    <td>{{leave.endDate}}</td>
+                                                    <td>{{leave.reason}}</td>
+                                                    <td>
+                                                        <button class="btn btn-danger"
+                                                            (click)="deleteRow(i)">Delete</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-end">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

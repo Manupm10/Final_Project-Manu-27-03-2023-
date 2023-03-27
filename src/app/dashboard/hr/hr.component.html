@@ -1,0 +1,435 @@
+<body class="hold-transition sidebar-mini sidebar-collapse layout-fixed">
+  <div class="wrapper">
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <button class="btn btn-outline-info" (click)="disable()">
+            {{name}}
+          </button>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto top-right-menu">
+        <div class="dropdown ms-auto">
+          <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <img src="..\..\assets\Images\logo.png" width="40" height="40" class="rounded-circle">
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/chart">Dashboard</a>
+            <a class="dropdown-item" href="/login">Logout  <i class='fas fa-sign-out-alt'
+              style="color: #ff0000;"></i></a>
+          </div>
+        </div>
+      </ul>
+    </nav>
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <a href="#" class="brand-link">
+        <span class="brand-image-outer">
+          <img src="..\..\assets\Images\logo3.png" alt="Employee Management System"
+            class="img-thumbnail border border-0 bg-transparent" />
+        </span>
+      </a>
+      <div class="sidebar">
+        <nav class="mt-4">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+            <li class="nav-item">
+
+              <a class="nav-link" href="/chart">
+                <i class="fas fa-tachometer-alt me-3"></i>
+                <p class="">
+                  HR Dashboard
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/employeeAdd" class="nav-link">
+                <i class='fas fa-user-plus me-3'></i>
+                <p>
+                  Add Employee
+                </p>
+
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <div class="row " *ngIf="isEnabled">
+      <div class="col mx-4">
+        <table class="table table-hover align-middle mb-0 ms-5  bg-light">
+          <thead class="bg-light text-center">
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Password</th>
+              <th>Email</th>
+              <th>Dob</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Phone Number</th>
+              <th>Blood Group</th>
+              <th>Image</th>
+              <th>Experience</th>
+              <th>Leave Taken</th>
+              <th>Status</th>
+              <th>Leave Details</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <tr *ngFor="let emp of empData1">
+              <td>{{emp.id}}</td>
+              <td>{{emp.firstName}} {{emp.lastName}}</td>
+              <td>{{emp.password}}</td>
+              <td>{{emp.email}}</td>
+              <td>{{emp.dob}}</td>
+              <td>{{emp.age}}</td>
+              <td>{{emp.gender}}</td>
+              <td>{{emp.phone}}</td>
+              <td>{{emp.bloodgroup}}</td>
+              <td><img src="../../assets/Images/{{emp.image}}" class="img-responsive img-thumbnail"
+                  style="width:70px;height:70px"></td>
+              <td>{{emp.experience}}</td>
+              <td>{{emp.leave}}</td>
+              <td>{{emp.status}}</td>
+              <td><button type="button" class="btn btn-outline-info" data-toggle="modal" (click)="onclic(emp.leavelist)"
+                  data-target="#myModal">Leave Details</button>
+              </td>
+              <td>
+                <button class="btn btn-outline-success m-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  (click)="onEdit(emp)">Edit <i class='fas fa-pen'></i></button>
+                <button class="btn btn-outline-danger" (click)="deleteEmp(emp)">Delete <i
+                    class='fas fa-trash-alt'></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- </div>   -->
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title"  id="exampleModalLabel">Leave Details</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body table-responsive">
+            <table class="table align-middle mb-0 bg-white">
+              <thead class="bg-light text-center">
+                <tr>
+                  <th>Number</th>
+                  <th>Leave Type</th>
+                  <th>No. of Days</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Reason</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr *ngFor="let item of newlist; let i =index">
+                  <td>{{i+1}}</td>
+                  <td>{{item.leavetype}}</td>
+                  <td>{{item.days}}</td>
+                  <td>{{item.startDate}}</td>
+                  <td>{{item.endDate}}</td>
+                  <td>{{item.reason}}</td>
+                  <td>
+                    <button class="btn btn-danger">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-wrapper" *ngIf="isDisabled">
+      <div class="content">
+        <div class="row" *ngFor="let emp of empData1">
+          <div class="col mx-4">
+            <div class="container-fluid align-middle g-0 mt-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row g-0">
+
+                    <div class="col-md-2 d-flex justify-content-center align-items-center" id="profile1">
+                      <img src="../../assets/Images/{{emp.image}}" alt="Profile Image" class="profile">
+                    </div>
+
+                    <div class="col ps-2">
+
+                      <div class="row g-0">
+
+                        <div class="col-md-10 text-center">
+                          <span class="name"><b>{{emp.id}}. {{emp.firstName | titlecase}} {{emp.lastName |
+                              titlecase}}</b></span>
+                        </div>
+
+                        <div class="col-md-2 d-flex justify-content-center align-items-center">
+                          <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                              data-bs-target="#exampleModal" (click)="onEdit(emp)">Edit <i
+                                class='fas fa-pen'></i></button>
+                            <button type="button" class="btn btn-outline-danger" (click)="deleteEmp(emp)">Delete <i
+                                class='fas fa-trash-alt'></i></button>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="row g-0 mt-4">
+
+                        <div class="col-md">
+
+                          <table class="table table-hover mx-auto">
+                            <thead class="text-center fs-5 fst-italic text-secondary">
+                              <tr>
+                                <td colspan="2">Personal Details</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Age</td>
+                                <td>{{emp.age}}</td>
+                              </tr>
+                              <tr>
+                                <td>Birthdate</td>
+                                <td>{{emp.dob}}</td>
+                              </tr>
+                              <tr>
+                                <td>Gender</td>
+                                <td>{{emp.gender | titlecase}}</td>
+                              </tr>
+                              <tr>
+                                <td>Blood Group</td>
+                                <td>{{emp.bloodgroup | titlecase}}</td>
+                              </tr>
+                              <tr>
+                                <td>Email</td>
+                                <td>{{emp.email}}</td>
+                              </tr>
+                              <tr>
+                                <td>Phone Number</td>
+                                <td>{{emp.phone}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                        </div>
+
+                        <div class="col">
+
+                          <table class="table table-hover mx-auto">
+                            <thead class="text-center fs-5 fst-italic text-secondary">
+                              <tr>
+                                <td colspan="2">Job Details</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                              <tr>
+                                <td>Experience</td>
+                                <td>{{emp.experience}} yrs</td>
+                              </tr>
+                              <tr>
+                                <td>Status</td>
+                                <td>{{emp.status}}</td>
+                              </tr>
+                              <tr>
+                                <td>Leave Taken</td>
+                                <td>{{emp.leave}}</td>
+                              </tr>
+                              <tr>
+                                <td><button type="button" class="btn btn-outline-info" data-toggle="modal"
+                                    (click)="onclic(emp.leavelist)" data-target="#myModal">Leave Details</button></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+</body>
+<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body m-5">
+        <form class="form" [formGroup]="empForm" (ngSubmit)="updateEmp()">
+          <div class="form-row mt-3">
+            <div class="form-group col-md-6">
+              <label>First Name</label>
+              <input type="text" class="form-control" formControlName="firstName"
+                placeholder="First Name">
+              <div class="text-danger"
+                *ngIf="empForm.get('firstName')?.invalid && empForm.get('firstName')?.touched">
+                Please provide a Your Name.<br><br>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Last Name</label>
+              <input type="text" class="form-control" formControlName="lastName"
+                placeholder="LastName">
+              <div class="text-danger"
+                *ngIf="empForm.get('lastName')?.invalid && empForm.get('lastName')?.touched">
+                Please provide a Your Name.<br><br>
+              </div>
+
+            </div>
+          </div>
+          <div class="form-row mt-3">
+            <div class="col-md-6"><label>Password</label>
+            </div>
+            <div class="col-md-6"><label>Confirm Password</label></div>
+          </div>
+          <div class="form-row">
+            <div class="input-group col-md-6">
+              <input [type]="changetype ? 'password' : 'text'" class="form-control"
+                placeholder="Password" formControlName="password" />
+              <span class="input-group-text"><i alt="show"
+                  [ngClass]="showPassword?'far fa-eye eye-show':'far fa-eye-slash eye-hide'"
+                  (click)="visiblePass()" [class.hide]="showPassword"></i></span>
+            </div>
+            <div class="input-group col-md-6">
+              <input [type]="changetype ? 'password' : 'text'" class="form-control"
+                formControlName="conpassword" placeholder="Confirm Password">
+              <span class="input-group-text"><i alt="show"
+                  [ngClass]="showPassword?'far fa-eye eye-show':'far fa-eye-slash eye-hide'"
+                  (click)="visiblePass()" [class.hide]="showPassword"></i></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="text-danger"
+                *ngIf="empForm.get('password')?.invalid &&  empForm.get('password')?.touched ">
+                *Password is required.<br><br>
+              </div>
+              <div class="text-danger" *ngIf="empForm.get('password')!.hasError('pattern')">
+                *Please provide a valid Password.Minimum 8 characters required.<br><br>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="text-danger"
+                *ngIf="empForm.get('conpassword')?.invalid &&  empForm.get('conpassword')?.touched ">
+                *Password is required.<br><br>
+              </div>
+              <div class="text-danger" *ngIf="empForm.get('conpassword')!.hasError('pattern')">
+                *Please provide a valid Password.Minimum 8 characters required.<br><br>
+              </div>
+              <div class="text-danger" *ngIf=" empForm.get('conpassword')!.hasError('Mustmatch')">
+                Password Mismatched.
+              </div>
+            </div>
+          </div>
+          <div class="form-row mt-3">
+            <div class="form-group col-md-6 ">
+              <label>Email</label>
+              <input type="email" class="form-control" formControlName="email"
+                placeholder="example@example.com">
+              <div class="text-danger" *ngIf="empForm.get('email')?.invalid &&  empForm.get('email')?.touched">
+                Please provide a valid email address.<br><br>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Date Of Birth</label>
+              <input type="date" class="form-control" placeholder="dd/mm/yyyy"
+                formControlName="dob" />
+              <div class="text-danger" *ngIf="empForm.get('dob')?.invalid && empForm.get('dob')?.touched">
+                Please provide your Date of Birth.<br><br>
+              </div>
+            </div>
+          </div>
+          <div class="form-row mt-3">
+            <div class="form-group col-md-2">
+              <label for="inputZip">Age</label>
+              <input type="number" class="form-control" placeholder="Age"
+                formControlName="age" />
+              <div class="text-danger" *ngIf="empForm.get('age')?.invalid && empForm.get('age')?.touched">
+                Please provide a Age.<br><br>
+              </div>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputZip">Gender</label>
+              <select class="form-control form-select" formControlName="gender"
+                placeholder="Select Your Gender">
+                <option value="gender" [selected]="gender">Choose your Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <div class="text-danger" *ngIf="empForm.get('gender')?.invalid && empForm.get('gender')?.touched">
+                Please Select a Gender.<br><br>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputZip">Phone Number</label>
+              <input type="number" class="form-control" placeholder="Phone Number"
+                formControlName="phone" />
+              <div class="text-danger"
+                *ngIf="empForm.get('phone')?.invalid &&  empForm.get('phone')?.touched || empForm.get('phone')!.hasError('pattern')">
+                Phone Number must be 10 digit.<br><br>
+              </div>
+            </div>
+          </div>
+          <div class="form-row mt-3">
+            <div class="form-group col-md-3">
+              <label>Blood Group</label>
+              <select class="form-control form-select" formControlName="bloodgroup">
+                <option value="bloodgroup" [selected]="bloodgroup">Choose your Blood Group</option>
+                <option value="A+Ve">A+ve</option>
+                <option value="O+ve">O+ve</option>
+                <option value="A-ve">A-ve</option>
+                <option value="O-ve">O-ve</option>
+                <option value="B+ve">B+ve</option>
+                <option value="AB+ve">AB+ve</option>
+                <option value="B-ve">B-ve</option>
+                <option value="AB-ve">AB-ve</option>
+              </select>
+              <div class="text-danger"
+                *ngIf="empForm.get('bloodgroup')?.invalid && empForm.get('bloodgroup')?.touched">
+                Please provide a Blood Group.<br><br>
+              </div>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputZip">Experience</label>
+              <input type="text" class="form-control" placeholder="Experience"
+                formControlName="experience" />
+              <div class="text-danger"
+                *ngIf="empForm.get('experience')?.invalid && empForm.get('experience')?.touched">
+                Please provide a Experience.<br><br>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputZip">Upload Photo</label>
+              <input type="file" name="image" class="form-control" #fileInput>
+              <div class="small text-muted mt-2">Upload Profile Photo</div>
+            </div>
+          </div>
+          <div class="modal-footer mt-4">
+            <button type="button" id="cancel" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" [disabled]="empForm.invalid">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

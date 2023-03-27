@@ -1,0 +1,448 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "Ann",
+      "lastName": "James",
+      "password": "Ann@1234",
+      "email": "ann1@gmail.com",
+      "dob": "1995-04-09",
+      "age": 28,
+      "gender": "female",
+      "phone": 9464321211,
+      "bloodgroup": "O+ve",
+      "image": "profile0.jpg",
+      "experience": "3",
+      "leave": 4,
+      "previousmonthLeave": 2,
+      "currentmonthleave": 0,
+      "previousmonth": 2,
+      "status": "Active",
+      "leavelist": [
+        {
+          "leavetype": "",
+          "days": 0,
+          "startDate": "",
+          "endDate": "",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "firstName": "Sam",
+      "lastName": "curren",
+      "password": "Sam@1234",
+      "email": "samcur@gmail.com",
+      "dob": "1998-02-03",
+      "age": 25,
+      "gender": "male",
+      "phone": 9897947236,
+      "bloodgroup": "B+ve",
+      "image": "profile1.jpeg",
+      "experience": 2,
+      "leave": 13,
+      "previousmonthLeave": 2,
+      "currentmonthleave": 0,
+      "previousmonth": 2,
+      "status": "Inactive",
+      "leavelist": [
+        {
+          "leavetype": "",
+          "days": 0,
+          "startDate": "",
+          "endDate": "",
+          "reason": ""
+        },
+        {
+          "leavetype": "sick",
+          "days": 2,
+          "startDate": "2023-03-21",
+          "endDate": "2023-03-22",
+          "reason": "djdjfv"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "firstName": "Kimmy",
+      "lastName": "Ryan",
+      "password": "Kim@1234",
+      "email": "kr@gmail.com",
+      "dob": "1980-05-19",
+      "age": 43,
+      "gender": "female",
+      "phone": 8885836424,
+      "bloodgroup": "A-ve",
+      "image": "profile2.jpg",
+      "experience": 6,
+      "leave": 19,
+      "previousmonthLeave": 4,
+      "currentmonthleave": 2,
+      "previousmonth": 2,
+      "status": "Inactive",
+      "leavelist": [
+        {
+          "leavetype": "",
+          "days": 0,
+          "startDate": "",
+          "endDate": "",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "firstName": "Jessica",
+      "lastName": "Gilbert",
+      "password": "Jess@1234",
+      "email": "jessica@gmail.com",
+      "dob": "1994-06-14",
+      "age": 29,
+      "gender": "female",
+      "phone": 7786826120,
+      "bloodgroup": "AB-ve",
+      "image": "profile3.jpg",
+      "experience": 4,
+      "leave": 16,
+      "previousmonthLeave": 5,
+      "currentmonthleave": 0,
+      "previousmonth": 2,
+      "id": 4,
+      "status": "Active",
+      "leavelist": [
+        {
+          "leavetype": "",
+          "days": 0,
+          "startDate": "",
+          "endDate": "",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "firstName": "Albert",
+      "lastName": "Linton",
+      "password": "Alb@1234",
+      "email": "Alb@gmail.com",
+      "dob": "1999-06-04",
+      "age": 24,
+      "gender": "male",
+      "phone": 8986856123,
+      "bloodgroup": "A+Ve",
+      "image": "profile4.jpg",
+      "experience": 2,
+      "leave": 9,
+      "previousmonthLeave": 3,
+      "currentmonthleave": 0,
+      "previousmonth": 2,
+      "id": 5,
+      "status": "Inactive",
+      "leavelist": [
+        {
+          "leavetype": "",
+          "days": 0,
+          "startDate": "",
+          "endDate": "",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "firstName": "Leo",
+      "lastName": "Mathew",
+      "password": "Leo@1234",
+      "email": "leoMathew@gmail.com",
+      "dob": "1986-01-18",
+      "age": 37,
+      "gender": "male",
+      "phone": 8996837133,
+      "bloodgroup": "O+ve",
+      "image": "profile5.jpg",
+      "experience": 8,
+      "leave": 18,
+      "previousmonthLeave": 2,
+      "currentmonthleave": 0,
+      "previousmonth": 2,
+      "status": "Inactive",
+      "leavelist": [
+        {
+          "leavetype": "",
+          "days": 0,
+          "startDate": "",
+          "endDate": "",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "firstName": "Sara",
+      "lastName": "Bell",
+      "password": "Sara@1234",
+      "email": "sarabell@gmail.com",
+      "dob": "1985-12-25",
+      "age": 38,
+      "gender": "female",
+      "phone": 8186896144,
+      "bloodgroup": "AB+ve",
+      "image": "profile14.jpg",
+      "experience": 10,
+      "leave": 16,
+      "previousmonthLeave": 1,
+      "currentmonthleave": 0,
+      "previousmonth": 2,
+      "status": "Active",
+      "leavelist": [
+        {
+          "leavetype": "",
+          "days": 0,
+          "startDate": "",
+          "endDate": "",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "firstName": "Monika",
+      "lastName": "Noni",
+      "password": "Mon@1234",
+      "email": "mnoni7@gmail.com",
+      "dob": "1993-06-11",
+      "age": 30,
+      "gender": "female",
+      "phone": 9386866127,
+      "bloodgroup": "O-ve",
+      "image": "profile11.jpg",
+      "experience": 5,
+      "leave": 11,
+      "previousmonthLeave": 5,
+      "currentmonthleave": 0,
+      "previousmonth": 2,
+      "status": "Active",
+      "leavelist": [
+        {
+          "leavetype": "",
+          "days": 0,
+          "startDate": "",
+          "endDate": "",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "firstName": "Ganny",
+      "lastName": "Anderson",
+      "password": "Gan@1234",
+      "email": "gcamndy8@gmail.com",
+      "dob": "1984-01-01",
+      "age": 39,
+      "gender": "male",
+      "phone": 7886839125,
+      "bloodgroup": "B-ve",
+      "image": "profile6.jpg",
+      "experience": 8,
+      "leave": 15,
+      "previousmonthLeave": 3,
+      "currentmonthleave": 0,
+      "previousmonth": 2,
+      "status": "Active",
+      "leavelist": [
+        {
+          "leavetype": "",
+          "days": 0,
+          "startDate": "",
+          "endDate": "",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "firstName": "William",
+      "lastName": "Kane",
+      "password": "Will@1234",
+      "email": "willkan9@gmail.com",
+      "dob": "1990-11-18",
+      "age": 33,
+      "gender": "male",
+      "phone": 7086836127,
+      "bloodgroup": "B+ve",
+      "image": "profile7.jpg",
+      "experience": 8,
+      "leave": 12,
+      "previousmonthLeave": 6,
+      "currentmonthleave": 0,
+      "previousmonth": 2,
+      "status": "Inactive",
+      "leavelist": [
+        {
+          "leavetype": "",
+          "days": 0,
+          "startDate": "",
+          "endDate": "",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "firstName": "Tim",
+      "lastName": "Triggs",
+      "password": "Tim@1234",
+      "email": "ttriggsa@gmail.com",
+      "dob": "1999-12-13",
+      "age": 24,
+      "gender": "male",
+      "phone": 9915796122,
+      "bloodgroup": "A+Ve",
+      "image": "profile8.jpg",
+      "experience": 3,
+      "leave": 7,
+      "previousmonthLeave": 2,
+      "currentmonthleave": 0,
+      "previousmonth": 2,
+      "status": "Active",
+      "leavelist": [
+        {
+          "leavetype": "",
+          "days": 0,
+          "startDate": "",
+          "endDate": "",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "firstName": "Ambrose",
+      "lastName": "Dane",
+      "password": "Amb@1234",
+      "email": "ambdane@gmail.com",
+      "dob": "1996-08-20",
+      "age": 27,
+      "gender": "male",
+      "phone": 8990016198,
+      "bloodgroup": "O+ve",
+      "image": "profile9.jpg",
+      "experience": 2,
+      "leave": 8,
+      "previousmonthLeave": 3,
+      "currentmonthleave": 0,
+      "previousmonth": 2,
+      "status": "Active",
+      "leavelist": [
+        {
+          "leavetype": "",
+          "days": 0,
+          "startDate": "",
+          "endDate": "",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "firstName": "Eza",
+      "lastName": "Jane",
+      "password": "Ezm@1234",
+      "email": "ezajjj@gmail.com",
+      "dob": "1989-12-30",
+      "age": 34,
+      "gender": "female",
+      "phone": 9066216025,
+      "bloodgroup": "A+Ve",
+      "image": "profile16.jpg",
+      "experience": 7,
+      "leave": 9,
+      "previousmonthLeave": 2,
+      "currentmonthleave": 0,
+      "previousmonth": 2,
+      "status": "Inactive",
+      "leavelist": [
+        {
+          "leavetype": "",
+          "days": 0,
+          "startDate": "",
+          "endDate": "",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "firstName": "Samanta",
+      "lastName": "Johnson",
+      "password": "Pru@1234",
+      "email": "samjo@gmail.com",
+      "dob": "1993-07-16",
+      "age": 30,
+      "gender": "female",
+      "phone": 8786836125,
+      "bloodgroup": "A+Ve",
+      "image": "profile12.jpg",
+      "experience": 6,
+      "leave": 6,
+      "previousmonthLeave": 2,
+      "currentmonthleave": 0,
+      "previousmonth": 2,
+      "status": "Inactive",
+      "leavelist": [
+        {
+          "leavetype": "",
+          "days": 0,
+          "startDate": "",
+          "endDate": "",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "firstName": "John",
+      "lastName": "Samuel",
+      "password": "John@1234",
+      "email": "john@123gmail.com",
+      "dob": "1997-02-06",
+      "age": 26,
+      "gender": "male",
+      "phone": 7879043150,
+      "bloodgroup": "AB+ve",
+      "image": "profile13.jpg",
+      "experience": "10",
+      "leave": 2,
+      "previousmonthLeave": 3,
+      "currentmonthleave": 0,
+      "previousmonth": 2,
+      "status": "Active",
+      "leavelist": [
+        {
+          "leavetype": "",
+          "days": 0,
+          "startDate": "",
+          "endDate": "",
+          "reason": ""
+        }
+      ]
+    }
+  ]
+}
