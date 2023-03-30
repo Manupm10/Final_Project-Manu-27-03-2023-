@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { ApiService } from './../../../api.service';
 import { Component, OnInit } from '@angular/core';
 import { Chart} from 'node_modules/chart.js';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-chart',
@@ -23,7 +24,7 @@ export class ChartComponent implements OnInit {
     experience:0,
     leave:'',
   };
-  constructor(private api:ApiService,private router:Router){}
+  constructor(private api:ApiService,private router:Router,private datePipe:DatePipe){}
   searchString!:string;
   empdata:any;
   chartdata:any;
